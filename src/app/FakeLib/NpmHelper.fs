@@ -41,7 +41,9 @@ type InstallArgs =
 /// implemented
 type NpmCommand =
 | Install of InstallArgs
+| InstallSilent of InstallArgs
 | Run of string
+| RunSilent of string
 | Custom of string
 
 /// The Npm parameter type
@@ -66,8 +68,10 @@ let private parseInstallArgs = function
     | Forced -> " --force"
 
 let private parse = function
-    | Install installArgs -> sprintf "install%s" (installArgs |> parseInstallArgs)
+    | Install installArgs -> sprintf "install %s" (installArgs |> parseInstallArgs)
+    | InstallSilent installArgs -> sprintf "install %s --silent" (installArgs |> parseInstallArgs)
     | Run str -> sprintf "run %s" str
+    | RunSilent str -> sprintf "run %s --silent" str
     | Custom str -> str
 
 let run npmParams =
