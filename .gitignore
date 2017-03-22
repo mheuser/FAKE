@@ -68,3 +68,5 @@ paket-files/
 .vs/
 
 .fake
+Samples/WebNpmGrunt/node_modules
+Samples/WebNpmGrunt/npm-debug.log
