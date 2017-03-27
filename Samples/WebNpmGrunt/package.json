@@ -9,7 +9,6 @@
     "jasmine": "^2.5.3"
   },
   "scripts": {
-    "test": "grunt jasmine_nodejs",
-    "prepublish": "npm test"
+    "test": "grunt jasmine_nodejs"
   }
 }
